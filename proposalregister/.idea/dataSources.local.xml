@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - proposalregister@localhost" uuid="52aad621-b4c2-4a6f-b4aa-e7918514f890">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>proposalregister.*</schema-pattern>
+      <default-schemas>proposalregister.*</default-schemas>
+    </data-source>
+  </component>
+</project>

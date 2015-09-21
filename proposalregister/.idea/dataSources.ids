@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - proposalregister@localhost" uuid="52aad621-b4c2-4a6f-b4aa-e7918514f890">
+    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="proposalregister"/>
+    <table name="admin" schema="" catalog="proposalregister" type="TABLE">
+      <column name="A_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="A_Password" sqlType="VARCHAR" precision="16" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="A_ID"/>
+      <index name="A_ID" unique="true" columns="A_ID,A_Password"/>
+    </table>
+    <table name="club" schema="" catalog="proposalregister" type="TABLE">
+      <column name="C_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="C_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="C_Desc" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="C_Advisor" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="C_ID"/>
+    </table>
+    <table name="proposal" schema="" catalog="proposalregister" type="TABLE">
+      <column name="P_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="P_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="P_Location" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="P_Date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="P_Budget" sqlType="FLOAT" precision="12" scale="0" nullable="false" jdbcType="7"/>
+      <column name="P_Participant" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="P_Description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="P_Status" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12" def="J0tJVic="/>
+      <column name="P_ProjectLeader" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Stu_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="C_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="P_ID,Stu_ID,C_ID"/>
+      <index name="P_ID" unique="true" columns="P_ID,Stu_ID,C_ID"/>
+    </table>
+    <table name="staff" schema="" catalog="proposalregister" type="TABLE">
+      <column name="Sta_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Sta_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Sta_Department" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Sta_Position" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Sta_Password" sqlType="VARCHAR" precision="16" scale="0" nullable="false" jdbcType="12"/>
+      <column name="C_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Sta_ID,C_ID"/>
+      <index name="Sta_ID" unique="true" columns="Sta_ID,C_ID"/>
+    </table>
+    <table name="student" schema="" catalog="proposalregister" type="TABLE">
+      <column name="Stu_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12" remarks="c3R1ZGVudCdzIG1hdHJpYyBudW1iZXI="/>
+      <column name="Stu_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Stu_Course" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Stu_Part" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Stu_PhoneNo" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Stu_Password" sqlType="VARCHAR" precision="16" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Stu_Status" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12" def="J0FDVElWRSc="/>
+      <primary-key name="PRIMARY" columns="Stu_ID"/>
+    </table>
+    <table name="student_club" schema="" catalog="proposalregister" type="TABLE">
+      <column name="Stu_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="C_ID" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Stu_ID,C_ID"/>
+      <index name="C_ID" unique="true" columns="C_ID"/>
+      <index name="Stu_ID" unique="true" columns="Stu_ID"/>
+      <index name="Stu_ID_2" unique="true" columns="Stu_ID,C_ID"/>
+    </table>
+  </data-source>
+</component>
